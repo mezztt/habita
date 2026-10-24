@@ -1,0 +1,73 @@
+/* Grupo G3 (reparaciones, inspecciones, interesados, visitas, catálogo). Usa los tokens --hb-* de habita.css */
+.g3-board { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(210px, 1fr); gap: 12px; overflow-x: auto; max-width: 100%; min-width: 0; padding-bottom: 12px; align-items: start; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.g3-board > .g3-col { scroll-snap-align: start; }
+.g3-col { background: var(--hb-surface-2); border: 1px solid var(--hb-line); border-radius: 16px; padding: 10px; min-width: 0; }
+.g3-col h3 { margin: 2px 4px 10px; font-size: 13px; color: var(--hb-ink); display: flex; justify-content: space-between; gap: 8px; }
+.g3-col h3 span { color: var(--hb-muted); font-weight: 700; }
+.g3-card { display: block; width: 100%; text-align: left; font: inherit; background: var(--hb-surface); color: var(--hb-ink); border: 1px solid var(--hb-line); border-radius: 12px; padding: 10px 12px; margin-bottom: 8px; cursor: pointer; }
+.g3-card:hover { border-color: var(--hb-brand-text); }
+.g3-card strong { display: block; font-size: 14px; margin-bottom: 2px; }
+.g3-card small { display: block; color: var(--hb-muted); font-size: 12px; }
+.g3-card .hb-row { margin-top: 6px; gap: 6px; }
+.g3-card.is-late { border-color: var(--hb-red-c); }
+.g3-empty-col { color: var(--hb-muted); font-size: 12.5px; padding: 6px 4px; }
+.g3-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin: 10px 0; }
+.g3-photo { position: relative; margin: 0; background: var(--hb-surface-2); border: 1px solid var(--hb-line); border-radius: 10px; overflow: hidden; }
+.g3-photo > button:not(.g3-photo-x) { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.g3-photo img { display: block; width: 100%; height: 96px; object-fit: cover; }
+.g3-photo figcaption { font-size: 11.5px; padding: 4px 6px; color: var(--hb-ink); }
+.g3-photo-x { position: absolute; top: 4px; right: 4px; width: 26px; height: 26px; border-radius: 99px; border: 0; background: rgba(15, 29, 29, .85); color: #fff; cursor: pointer; font-size: 16px; line-height: 1; }
+.g3-photo-missing { height: 96px; display: grid; place-items: center; color: var(--hb-muted); font-size: 12px; }
+.g3-photo-big { max-width: 100%; max-height: 70vh; display: block; margin: 0 auto; border-radius: 10px; }
+.g3-uploader { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.g3-small { padding: 6px 10px !important; font-size: 12.5px !important; }
+.g3-inline-error { padding: 6px 10px; }
+.g3-link-btn { display: inline-flex; align-items: center; text-decoration: none; }
+.g3-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; }
+.g3-grid .wide { grid-column: 1 / -1; }
+@media (max-width: 640px) { .g3-grid { grid-template-columns: minmax(0, 1fr); } .g3-board { grid-auto-columns: minmax(82vw, 1fr); } }
+.g3-section { margin: 16px 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--hb-muted); font-weight: 800; }
+.g3-kv { display: grid; grid-template-columns: 140px 1fr; gap: 4px 10px; font-size: 13.5px; margin: 6px 0; }
+.g3-kv dt { color: var(--hb-muted); } .g3-kv dd { margin: 0; color: var(--hb-ink); }
+.g3-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.g3-room { background: var(--hb-surface); border: 1px solid var(--hb-line); border-radius: 14px; padding: 12px; margin-bottom: 12px; }
+.g3-room h3 { margin: 0 0 8px; font-size: 15px; color: var(--hb-ink); }
+.g3-item { border-top: 1px solid var(--hb-line); padding: 10px 0; }
+.g3-item:first-of-type { border-top: 0; }
+.g3-item-name { font-weight: 700; font-size: 14px; color: var(--hb-ink); margin-bottom: 6px; }
+.g3-cond { display: inline-flex; gap: 4px; flex-wrap: wrap; }
+.g3-cond button { border: 1.5px solid var(--hb-line); background: var(--hb-surface); color: var(--hb-ink); border-radius: 10px; padding: 8px 12px; min-height: 40px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.g3-cond button.on-BUENO { background: var(--hb-green-soft); color: var(--hb-green-text); border-color: var(--hb-green-text); }
+.g3-cond button.on-REGULAR { background: var(--hb-orange-soft); color: var(--hb-orange-text); border-color: var(--hb-orange-text); }
+.g3-cond button.on-MALO { background: var(--hb-red-soft); color: var(--hb-red-text); border-color: var(--hb-red-text); }
+.g3-cond button.on-NO_APLICA { background: var(--hb-gray-soft); color: var(--hb-gray-text); border-color: var(--hb-gray-text); }
+.g3-item input[type="text"], .g3-item textarea { width: 100%; margin-top: 6px; }
+.g3-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; }
+.g3-day { background: var(--hb-surface-2); border: 1px solid var(--hb-line); border-radius: 14px; padding: 8px; min-height: 120px; min-width: 0; }
+.g3-day h3 { margin: 0 0 6px; font-size: 12.5px; color: var(--hb-ink); }
+.g3-day.is-today { border-color: var(--hb-brand-text); }
+@media (max-width: 900px) { .g3-days { grid-template-columns: minmax(0, 1fr); } }
+.g3-visit { background: var(--hb-surface); border: 1px solid var(--hb-line); border-left: 4px solid var(--hb-brand-c); border-radius: 10px; padding: 8px 10px; margin-bottom: 6px; width: 100%; text-align: left; font: inherit; color: var(--hb-ink); cursor: pointer; }
+.g3-visit.st-CONFIRMADA { border-left-color: var(--hb-green-text); }
+.g3-visit.st-AGENDADA { border-left-color: var(--hb-accent); }
+.g3-visit.st-CANCELADA, .g3-visit.st-AUSENTE { opacity: .7; }
+.g3-visit b { display: block; font-size: 13px; } .g3-visit small { display: block; color: var(--hb-muted); font-size: 12px; }
+/* catálogo público */
+.pb-page:has(.g3-catalog) .pb-wrap { max-width: 1040px; }
+.g3-filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; align-items: end; }
+.g3-props { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+.g3-prop { background: #fff; border: 1px solid #cedddd; border-radius: 18px; overflow: hidden; display: block; text-decoration: none; color: #0f1d1d; box-shadow: 0 6px 20px rgba(15, 29, 29, .08); }
+.g3-prop:hover { border-color: #184745; }
+.g3-prop-img { position: relative; aspect-ratio: 16 / 10; height: auto; overflow: hidden; background: #e8f0f0; display: grid; place-items: center; color: #465858; font-size: 13px; }
+.g3-prop-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.g3-prop-body { padding: 12px 14px 14px; }
+.g3-prop-price { font-size: 20px; font-weight: 800; color: #184745; }
+.g3-prop-body p { margin: 2px 0; font-size: 13.5px; color: #415050; }
+.g3-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.g3-tag { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: #e3f0ee; color: #184745; }
+.g3-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 8px; margin-bottom: 14px; }
+.g3-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; display: block; }
+.g3-gallery .main { height: 340px; } .g3-gallery .side { display: grid; gap: 8px; grid-template-rows: 1fr 1fr; height: 340px; }
+@media (max-width: 640px) { .g3-gallery { grid-template-columns: 1fr; } .g3-gallery .main { height: 230px; } .g3-gallery .side { height: 90px; grid-template-rows: none; grid-template-columns: 1fr 1fr; } }
+.g3-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 640px) { .g3-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; } .g3-filters .pb-field:nth-child(3) { grid-column: 1 / -1; } }
